@@ -171,8 +171,8 @@ body {
   display: none;
 }
 .container .card details summary::after {
-  content: url(./images/icon-arrow-down.svg);
   transition: transform 0.3s ease;
+  content: url(../images/icon-arrow-down.svg);
 }
 .container .card details[open] summary {
   font-weight: 700;

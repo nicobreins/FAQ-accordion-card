@@ -190,8 +190,8 @@ body{
                 }
 
                 &::after{
-                    content: url(./images/icon-arrow-down.svg);
                     transition: transform .3s ease;
+                    content: url(../images/icon-arrow-down.svg);
                 }
                 
             }
