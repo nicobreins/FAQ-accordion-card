@@ -1,0 +1,219 @@
+
+:root{
+    --dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    --soft-violet : hsl(273, 75%, 66%);
+    --soft-blue : hsl(240, 73%, 65%);
+
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+@mixin mq($size) {
+    @media(min-width: $size) {
+        @content;
+    }
+}
+
+body{
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+
+    @include mq(768px){
+        font-size: 18px;
+    }
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+
+    .card-wrapper{
+        padding: 1.5rem;
+        width: 100%;
+        padding-top: 10.5rem;
+        padding-bottom: 4rem;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mq(768px){
+            padding: 0;
+        }
+
+    }
+
+    .card-container{
+        position: relative;
+        width: 100%;
+        @include mq(768px){
+            width: auto;
+        } 
+
+        .illstration-box-desktop{
+            display: none;
+    
+            @include mq(768px){
+                display: inline-block;
+                position: absolute;
+                z-index: 3;
+                left: -125px;
+                top: 40%;  
+                filter: drop-shadow(0px 10px 10px rgba($color: #000000, $alpha: .3));
+            }
+            
+        }
+    }
+
+    
+
+    .card{
+        background-color: #fff;
+        padding: 3rem 1.5rem;
+        border-radius: 24px;
+        box-shadow: 0px 40px 50px -10px rgba($color: #000000, $alpha: .3);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        position: relative;
+        box-sizing: border-box;
+
+        @include mq(768px){
+            padding: 0rem;
+            flex-direction: row;
+            width: 960px;
+            overflow: hidden;    
+
+            
+            & > * {
+                flex-basis: 100%;
+            }
+        }
+
+        .card-imgs{
+            position: relative;
+
+            @include mq(768px){
+                height: 100%;
+            }
+        }
+
+        .illstration-mobile{
+            position: absolute;
+            top: -110px;
+
+            @include mq(768px){
+                display:none;
+            }
+        }
+
+        .illstration-desktop{
+            display: none;
+
+            @include mq(768px){
+                display:inline-block;
+                margin-left: -80px;
+                position: relative;
+                z-index: 2;
+            }
+        }
+        
+
+        .bg-mobile{
+            margin-bottom: 1rem;
+            
+            @include mq(768px){
+                display:none;
+            }
+        }
+
+        .bg-desktop{
+            display: none;
+
+            @include mq(768px){
+                display: inline-block;
+                position: absolute;
+                left: -145%;
+                top: -100%;
+
+            }
+        }
+
+        .card-content{
+            width: 100%;
+
+            @include mq(768px){
+                padding: 5rem 6rem;
+            }
+        }
+
+        h1{
+            text-align: center;
+            color: var(--dark-desaturated-blue);
+
+            @include mq(768px){ 
+                text-align: left;
+                margin-top:0 ;
+            }
+
+        }
+
+        details{
+            border-bottom: .5px solid var(--light-grayish-blue);
+            padding: 1rem 0rem;
+            line-height: 1.4rem;
+            width: 100%;
+            
+
+            summary{
+                color: var(--very-dark-grayish-blue);
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                align-items: center;
+                font-size: .95rem;
+
+                &:active, &:hover{
+                    color: var(--soft-red);
+                }  
+
+                &::marker {
+                    display: none;
+                }
+
+                &::after{
+                    content: url(/images/icon-arrow-down.svg);
+                    transition: transform .3s ease;
+                }
+                
+            }
+            
+
+            &[open] summary{
+                font-weight: 700;
+                color: var(--dark-desaturated-blue);
+
+                &::after{
+                    transform: rotate(-180deg);
+                }
+            }
+            
+
+            p{
+                margin-bottom: 0;
+                color: var(--dark-grayish-blue);
+                font-size: .9rem;
+            }            
+        }
+    }
+   
+    
+}

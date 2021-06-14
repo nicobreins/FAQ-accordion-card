@@ -1,0 +1,188 @@
+:root {
+  --dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+}
+.container .card-wrapper {
+  padding: 1.5rem;
+  width: 100%;
+  padding-top: 10.5rem;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .container .card-wrapper {
+    padding: 0;
+  }
+}
+.container .card-container {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container .card-container {
+    width: auto;
+  }
+}
+.container .card-container .illstration-box-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .container .card-container .illstration-box-desktop {
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    left: -125px;
+    top: 40%;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));
+  }
+}
+.container .card {
+  background-color: #fff;
+  padding: 3rem 1.5rem;
+  border-radius: 24px;
+  box-shadow: 0px 40px 50px -10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .container .card {
+    padding: 0rem;
+    flex-direction: row;
+    width: 960px;
+    overflow: hidden;
+  }
+  .container .card > * {
+    flex-basis: 100%;
+  }
+}
+.container .card .card-imgs {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .container .card .card-imgs {
+    height: 100%;
+  }
+}
+.container .card .illstration-mobile {
+  position: absolute;
+  top: -110px;
+}
+@media (min-width: 768px) {
+  .container .card .illstration-mobile {
+    display: none;
+  }
+}
+.container .card .illstration-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .container .card .illstration-desktop {
+    display: inline-block;
+    margin-left: -80px;
+    position: relative;
+    z-index: 2;
+  }
+}
+.container .card .bg-mobile {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .container .card .bg-mobile {
+    display: none;
+  }
+}
+.container .card .bg-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .container .card .bg-desktop {
+    display: inline-block;
+    position: absolute;
+    left: -145%;
+    top: -100%;
+  }
+}
+.container .card .card-content {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container .card .card-content {
+    padding: 5rem 6rem;
+  }
+}
+.container .card h1 {
+  text-align: center;
+  color: var(--dark-desaturated-blue);
+}
+@media (min-width: 768px) {
+  .container .card h1 {
+    text-align: left;
+    margin-top: 0;
+  }
+}
+.container .card details {
+  border-bottom: 0.5px solid var(--light-grayish-blue);
+  padding: 1rem 0rem;
+  line-height: 1.4rem;
+  width: 100%;
+}
+.container .card details summary {
+  color: var(--very-dark-grayish-blue);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.container .card details summary:active, .container .card details summary:hover {
+  color: var(--soft-red);
+}
+.container .card details summary::marker {
+  display: none;
+}
+.container .card details summary::after {
+  content: url(/images/icon-arrow-down.svg);
+  transition: transform 0.3s ease;
+}
+.container .card details[open] summary {
+  font-weight: 700;
+  color: var(--dark-desaturated-blue);
+}
+.container .card details[open] summary::after {
+  transform: rotate(-180deg);
+}
+.container .card details p {
+  margin-bottom: 0;
+  color: var(--dark-grayish-blue);
+  font-size: 0.9rem;
+}/*# sourceMappingURL=main.css.map */
